@@ -11,14 +11,14 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         try
-	  	    {
-	         		java.lang.Process p = Runtime.getRuntime().exec("su");
-			         p.getOutputStream().write("ps | grep dex2oat\n".getBytes());
-			         android.widget.TextView t = new android.widget.TextView(this);
-			         t.setText(new BufferedReader(new InputStreamReader(p.getInputStream())).readLine());
+        {
+            java.lang.Process p = Runtime.getRuntime().exec("su");
+            p.getOutputStream().write("ps | grep dex2oat\n".getBytes());
+            android.widget.TextView t = new android.widget.TextView(this);
+            t.setText(new BufferedReader(new InputStreamReader(p.getInputStream())).readLine());
             setContentView(t);
-	      	}
-		      catch (IOException e)
-		      {}
+        }
+        catch (IOException e)
+        {}
     }
 }
